@@ -22,7 +22,7 @@ function buildRingSegments(easy, medium, hard, totalSolved, cx, cy, r, theme) {
         cx="${cx}" cy="${cy}" r="${r}"
         fill="none"
         stroke="#${theme.subtext}33"
-        stroke-width="6"
+        stroke-width="8"
       />
     `;
   }
@@ -49,7 +49,7 @@ function buildRingSegments(easy, medium, hard, totalSolved, cx, cy, r, theme) {
         d="${getRingPath(cx, cy, r, s.start, s.end)}"
         fill="none"
         stroke="#${s.color}"
-        stroke-width="6"
+        stroke-width="8"
         stroke-linecap="round"
       />
     `,
@@ -64,7 +64,7 @@ function buildHideSet(hideParam) {
 
 export function generateSVG(stats, theme, params = {}) {
   const hide = buildHideSet(params.hide);
-  const logo = params.logo ?? ''     //leetcode logo
+  const logo = params.logo ?? ""; //leetcode logo
 
   const {
     username,
@@ -79,7 +79,11 @@ export function generateSVG(stats, theme, params = {}) {
     streak,
   } = stats;
 
-  const LEGEND_START_Y = 80;
+  //logo size
+  const LOGO_SIZE = 48;
+
+  const HEADER_HEIGHT = 14 + LOGO_SIZE + 10; // y_start + logo + gap
+  const LEGEND_START_Y = HEADER_HEIGHT + 16 + 10;
   const LEGEND_GAP = 24;
   const LEGEND_ITEMS = 3;
 
@@ -89,8 +93,7 @@ export function generateSVG(stats, theme, params = {}) {
   const CX = PADDING + 40; // Ring center X
   // center of legend block(for aligning with circle)
   const CY = LEGEND_START_Y + ((LEGEND_ITEMS - 1) * LEGEND_GAP) / 2;
-  const R = 35; // Ring radius
-
+  const R = 38; // Ring radius
   const GAP = 16;
   const CARD_WIDTH = (WIDTH - PADDING * 2 - GAP) / 2;
 
@@ -118,14 +121,14 @@ export function generateSVG(stats, theme, params = {}) {
     
     <text x="${CX + R + 30 + 12}" y="${LEGEND_START_Y + i * LEGEND_GAP + 4}"
       font-family="Inter, sans-serif"
-      font-size="12"
+      font-size="14"
       fill="#${theme.subtext}">
       ${row.label}
     </text>
 
     <text x="${WIDTH - PADDING}" y="${LEGEND_START_Y + i * LEGEND_GAP + 4}"
       font-family="Inter, sans-serif"
-      font-size="12"
+      font-size="14"
       font-weight="600"
       fill="#${theme.text}"
       text-anchor="end">
@@ -148,7 +151,7 @@ export function generateSVG(stats, theme, params = {}) {
   // Dynamic height based on visible rows
   const rows = Math.ceil(statCards.length / 2);
   const GRID_START_Y = CY + R + 30;
-  const CARD_HEIGHT = GRID_START_Y + rows * 65 + PADDING;
+  const CARD_HEIGHT = GRID_START_Y + rows * 85;
 
   const gridSVG = statCards
     .map((card, i) => {
@@ -156,23 +159,23 @@ export function generateSVG(stats, theme, params = {}) {
       const row = Math.floor(i / 2);
 
       const x = PADDING + col * (CARD_WIDTH + GAP);
-      const y = GRID_START_Y + row * 65;
+      const y = GRID_START_Y + row * 85;
 
       return `
       <rect
         x="${x}"
         y="${y}"
         width="${CARD_WIDTH}"
-        height="50"
+        height="60"
         rx="10"
         fill="#${theme.subtext}11"
       />
 
       <text
         x="${x + 10}"
-        y="${y + 18}"
+        y="${y + 22}"
         font-family="Inter, sans-serif"
-        font-size="9"
+        font-size="10"
         fill="#${theme.subtext}"
         letter-spacing="1"
       >
@@ -181,9 +184,9 @@ export function generateSVG(stats, theme, params = {}) {
 
       <text
         x="${x + 10}"
-        y="${y + 36}"
+        y="${y + 46}"
         font-family="Inter, sans-serif"
-        font-size="16"
+        font-size="18"
         font-weight="600"
         fill="#${theme.accent}"
       >
@@ -212,34 +215,31 @@ export function generateSVG(stats, theme, params = {}) {
   />
 
   <!-- Header -->
+  <!-- LeetCode Logo -->
   <image
     href="${logo}"
     x="${PADDING}"
-    y="${PADDING}"
-    width="28"
-    height="28"
+    y="16"
+    width="${LOGO_SIZE}"
+    height="${LOGO_SIZE}"
   />
-
+  
   <text
-    x="${PADDING + 36}"
-    y="32"
+    x="${PADDING + LOGO_SIZE + 12}"
+    y="33"
     font-family="Inter, sans-serif"
     font-size="14"
     font-weight="600"
     fill="#${theme.text}"
-  >
-    LeetCode
-  </text>
-
+  >LeetCode</text>
+  
   <text
-    x="${PADDING + 36}"
-    y="46"
+    x="${PADDING + LOGO_SIZE + 12}"
+    y="49"
     font-family="Inter, sans-serif"
-    font-size="11"
+    font-size="12"
     fill="#${theme.subtext}"
-  >
-    @${username || "-"}
-  </text>
+  >@${username || "-"}</text>
 
   <!-- Ring background -->
   <circle
@@ -248,6 +248,7 @@ export function generateSVG(stats, theme, params = {}) {
     r="${R}"
     fill="none"
     stroke="#${theme.subtext}33"
+    stroke-width="8"   
   />
 
   <!-- Ring segments -->
@@ -282,17 +283,19 @@ export function generateSVG(stats, theme, params = {}) {
   ${gridSVG}
 
   <!-- View Profile -->
-  <a href="https://leetcode.com/${username}" target="_blank">
-    <text
-      x="${PADDING}"
-      y="${CARD_HEIGHT - PADDING - 2}"
-      text-anchor="start"
-      font-size="10"
-      fill="#${theme.subtext}"
-    >
-      VIEW PROFILE ↗
-    </text>
-  </a>
+  <!--
+    <a href="https://leetcode.com/${username}" target="_blank">
+      <text
+        x="${PADDING}"
+        y="${CARD_HEIGHT - PADDING - 2}"
+        text-anchor="start"
+        font-size="10"
+        fill="#${theme.subtext}"
+      >
+        VIEW PROFILE ↗
+      </text>
+    </a>
+  -->
 
 </svg>
   `.trim();
