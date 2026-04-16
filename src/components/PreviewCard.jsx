@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import leetCodeLogo from "../../public/leetCode_logo.png";
 import clsx from "clsx";
 
 const THEME_OPTIONS = ["dark", "light", "transparent"];

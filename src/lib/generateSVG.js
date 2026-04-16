@@ -1,10 +1,3 @@
-import fs from "fs";
-
-const file = fs.readFileSync("./public/leetCode_logo.png");
-const base64 = file.toString("base64");
-
-console.log(base64);
-
 function getRingPath(cx, cy, r, startAngle, endAngle) {
   // Convert degrees to radians
   const start = ((startAngle - 90) * Math.PI) / 180;
@@ -71,6 +64,7 @@ function buildHideSet(hideParam) {
 
 export function generateSVG(stats, theme, params = {}) {
   const hide = buildHideSet(params.hide);
+  const logo = params.logo ?? ''     //leetcode logo
 
   const {
     username,
@@ -92,7 +86,7 @@ export function generateSVG(stats, theme, params = {}) {
   // Card dimensions
   const WIDTH = 380;
   const PADDING = 24;
-  const CX = 90; // Ring center X
+  const CX = PADDING + 40; // Ring center X
   // center of legend block(for aligning with circle)
   const CY = LEGEND_START_Y + ((LEGEND_ITEMS - 1) * LEGEND_GAP) / 2;
   const R = 35; // Ring radius
@@ -219,7 +213,7 @@ export function generateSVG(stats, theme, params = {}) {
 
   <!-- Header -->
   <image
-    href="/leetCode_logo.png"
+    href="${logo}"
     x="${PADDING}"
     y="${PADDING}"
     width="28"
@@ -287,18 +281,18 @@ export function generateSVG(stats, theme, params = {}) {
   <!-- Grid -->
   ${gridSVG}
 
-  // <!-- View Profile -->
-  // <a href="https://leetcode.com/${username}" target="_blank">
-  //   <text
-  //     x="${PADDING}"
-  //     y="${CARD_HEIGHT - PADDING - 2}"
-  //     text-anchor="start"
-  //     font-size="10"
-  //     fill="#${theme.subtext}"
-  //   >
-  //     VIEW PROFILE ↗
-  //   </text>
-  // </a>
+  <!-- View Profile -->
+  <a href="https://leetcode.com/${username}" target="_blank">
+    <text
+      x="${PADDING}"
+      y="${CARD_HEIGHT - PADDING - 2}"
+      text-anchor="start"
+      font-size="10"
+      fill="#${theme.subtext}"
+    >
+      VIEW PROFILE ↗
+    </text>
+  </a>
 
 </svg>
   `.trim();

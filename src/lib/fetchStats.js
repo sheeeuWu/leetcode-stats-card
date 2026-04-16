@@ -92,7 +92,7 @@ export async function fetchStats(rawUsername) {
   }
 
   const data = await response.json()
-  console.log("data ---> ", data);
+  // console.log("data ---> ", data);
 
   // LeetCode returns 200 even for errors, check data level
   if (data.errors) {

@@ -2,9 +2,17 @@ import { fetchStats } from '@component/lib/fetchStats'
 import { generateSVG } from '@component/lib/generateSVG'
 import { getTheme } from '@component/lib/themes'
 
+import { readFileSync } from 'fs'
+import { join }        from 'path'
+
+//leetcode logo for SVG 
+const logoBase64 = `data:image/png;base64,${
+  readFileSync(join(process.cwd(), 'public', 'leetCode_logo.png'))
+    .toString('base64')
+}`
 
 // Run on Vercel Edge Network — globally distributed, fastest response
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 // Validate username — only allow safe characters
 function isValidUsername(username) {
@@ -105,6 +113,7 @@ export async function GET(request) {
     // Generate SVG card
     const svg = generateSVG(stats, theme, {
       hide: params.hide,
+      logo: logoBase64, 
     })
 
     return new Response(svg, {
