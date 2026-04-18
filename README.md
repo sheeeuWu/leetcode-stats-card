@@ -3,6 +3,7 @@
     <img src="./public/logo.png" width="50" valign="middle" />
     LeetCode Stats Card
   </h1>
+  <br/>
 </div>
 
 &nbsp;
