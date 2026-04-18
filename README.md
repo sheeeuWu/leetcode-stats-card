@@ -1,8 +1,8 @@
 <div align="center">
-  <div>
-    <img src="./public/logo.png" width="50" valign="middle" />
-    <h1>LeetCode Stats Card</h1>
-  </div>
+  <h1>
+    <img src="./public/logo.png" width="40" valign="middle" />
+    LeetCode Stats Card
+  </h1>
 </div>
 
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
@@ -22,15 +22,18 @@ Add this to your GitHub README or any markdown file:
 Or use it as an `<img>` tag in your portfolio:
 
 ```html
-<img src="https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME" alt="LeetCode Stats" />
+<img
+  src="https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME"
+  alt="LeetCode Stats"
+/>
 ```
 
 ---
 
 ## 🎨 Themes
 
-| Dark | Light | Transparent |
-|------|-------|-------------|
+| Dark                                                | Light                                                | Transparent                                                |
+| --------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
 | <img src="./public/preview-dark.png" width="220" /> | <img src="./public/preview-light.png" width="220" /> | <img src="./public/preview-transparent.png" width="220" /> |
 
 ```md
@@ -43,13 +46,13 @@ Or use it as an `<img>` tag in your portfolio:
 
 ## ⚙️ Parameters
 
-| Parameter | Type | Default | Description |
-|---|---|---|---|
-| `username` | string | required | Your LeetCode username |
-| `theme` | string | `dark` | Card theme: `dark`, `light`, `transparent` |
-| `hide` | string | — | Hide specific stats, comma separated |
-| `bg` | hex | — | Custom background color (without `#`) |
-| `accent` | hex | — | Custom accent/value color (without `#`) |
+| Parameter  | Type   | Default  | Description                                |
+| ---------- | ------ | -------- | ------------------------------------------ |
+| `username` | string | required | Your LeetCode username                     |
+| `theme`    | string | `dark`   | Card theme: `dark`, `light`, `transparent` |
+| `hide`     | string | —        | Hide specific stats, comma separated       |
+| `bg`       | hex    | —        | Custom background color (without `#`)      |
+| `accent`   | hex    | —        | Custom accent/value color (without `#`)    |
 
 ---
 
@@ -59,16 +62,17 @@ You can choose which stats to display in the 2×2 grid using the `hide` paramete
 
 Available stats:
 
-| Key | Description |
-|---|---|
-| `platformrank` | Your global LeetCode platform rank |
-| `contestrating` | Your contest rating |
-| `globalrank` | Your global contest rank |
-| `reputation` | Your reputation points |
-| `streak` | Your current streak |
-| `totalsolved` | Total problems solved |
+| Key             | Description                        |
+| --------------- | ---------------------------------- |
+| `platformrank`  | Your global LeetCode platform rank |
+| `contestrating` | Your contest rating                |
+| `globalrank`    | Your global contest rank           |
+| `reputation`    | Your reputation points             |
+| `streak`        | Your current streak                |
+| `totalsolved`   | Total problems solved              |
 
 **Example — show only Platform Rank and Total Solved:**
+
 ```md
 ![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&hide=contestrating,globalrank,reputation,streak)
 ```
@@ -127,4 +131,3 @@ http://localhost:3000/api/card?username=YOUR_USERNAME
 MIT © [saifaliCodes](https://github.com/sheeeuWu)
 
 ---
-
