@@ -2,7 +2,9 @@
 
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
-![demo](./public/preview-light.png)
+<a href="https://leetcode-stats-card-opal.vercel.app">
+  <img src="./public/preview-light.png" width="380" />
+</a>
 
 ## 🚀 Usage
 
