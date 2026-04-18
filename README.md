@@ -1,4 +1,4 @@
-# <img src="./public/logo.png"/> LeetCode Stats Card
+# <img src="./public/logo.png" width="50"/> LeetCode Stats Card
 
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
