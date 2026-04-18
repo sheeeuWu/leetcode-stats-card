@@ -2,7 +2,7 @@
 
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
-![demo](./public/preview-dark.png)
+![demo](./public/preview-light.png)
 
 ## 🚀 Usage
 
