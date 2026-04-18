@@ -1,7 +1,7 @@
-<h1>
-  <img src="./public/logo.png" width="50" valign="middle" />
-  LeetCode Stats Card
-</h1>
+<div align="center">
+  <img src="./public/logo.png" width="40" valign="middle" />
+  <h1>LeetCode Stats Card</h1>
+</div>
 
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
