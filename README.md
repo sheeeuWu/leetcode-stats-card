@@ -1,5 +1,5 @@
 <h1>
-  <img src="./public/logo.png" width="40" valign="middle" />
+  <img src="./public/logo.png" width="50" valign="middle" />
   LeetCode Stats Card
 </h1>
 
