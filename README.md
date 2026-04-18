@@ -22,14 +22,18 @@ Or use it as an `<img>` tag in your portfolio:
 
 ## 🎨 Themes
 
-### Dark (default)
+<!-- ### Dark (default)
 ![dark theme](./public/preview-dark.png)
 
 ### Light
 ![light theme](./public/preview-light.png)
 
 ### Transparent
-![transparent theme](./public/preview-transparent.png)
+![transparent theme](./public/preview-transparent.png) -->
+
+| Dark | Light | Transparent |
+|------|-------|-------------|
+| <img src="./public/preview-dark.png" width="220" /> | <img src="./public/preview-light.png" width="220" /> | <img src="./public/preview-transparent.png" width="220" /> |
 
 \`\`\`md
 [![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=dark)](https://leetcode.com/YOUR_USERNAME)
