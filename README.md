@@ -1,4 +1,4 @@
-# leetcode-stats-card
+# LeetCode Stats Card
 
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
@@ -8,38 +8,29 @@ Generate a beautiful, customizable LeetCode stats card for your GitHub README or
 
 Add this to your GitHub README or any markdown file:
 
-\`\`\`md
+```md
 [![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME)](https://leetcode.com/YOUR_USERNAME)
-\`\`\`
+```
 
 Or use it as an `<img>` tag in your portfolio:
 
-\`\`\`html
+```html
 <img src="https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME" alt="LeetCode Stats" />
-\`\`\`
+```
 
 ---
 
 ## 🎨 Themes
 
-<!-- ### Dark (default)
-![dark theme](./public/preview-dark.png)
-
-### Light
-![light theme](./public/preview-light.png)
-
-### Transparent
-![transparent theme](./public/preview-transparent.png) -->
-
 | Dark | Light | Transparent |
 |------|-------|-------------|
 | <img src="./public/preview-dark.png" width="220" /> | <img src="./public/preview-light.png" width="220" /> | <img src="./public/preview-transparent.png" width="220" /> |
 
-\`\`\`md
+```md
 [![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=dark)](https://leetcode.com/YOUR_USERNAME)
 [![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=light)](https://leetcode.com/YOUR_USERNAME)
 [![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=transparent)](https://leetcode.com/YOUR_USERNAME)
-\`\`\`
+```
 
 ---
 
@@ -71,9 +62,9 @@ Available stats:
 | `totalsolved` | Total problems solved |
 
 **Example — show only Platform Rank and Total Solved:**
-\`\`\`md
+```md
 ![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&hide=contestrating,globalrank,reputation,streak)
-\`\`\`
+```
 
 ---
 
@@ -81,9 +72,9 @@ Available stats:
 
 You can fully customize the card colors using hex values (without `#`):
 
-\`\`\`md
+```md
 ![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&bg=1a1a2e&accent=e94560)
-\`\`\`
+```
 
 ---
 
@@ -127,7 +118,6 @@ http://localhost:3000/api/card?username=YOUR_USERNAME
 ## 📝 License
 
 MIT © [saifaliCodes](https://github.com/sheeeuWu)
-\`\`\`
 
 ---
 
