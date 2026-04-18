@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# leetcode-stats-card
 
-## Getting Started
+Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
-First, run the development server:
+![demo](./public/preview-dark.png)
+
+## 🚀 Usage
+
+Add this to your GitHub README or any markdown file:
+
+\`\`\`md
+[![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME)](https://leetcode.com/YOUR_USERNAME)
+\`\`\`
+
+Or use it as an `<img>` tag in your portfolio:
+
+\`\`\`html
+<img src="https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME" alt="LeetCode Stats" />
+\`\`\`
+
+---
+
+## 🎨 Themes
+
+### Dark (default)
+![dark theme](./public/preview-dark.png)
+
+### Light
+![light theme](./public/preview-light.png)
+
+### Transparent
+![transparent theme](./public/preview-transparent.png)
+
+\`\`\`md
+[![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=dark)](https://leetcode.com/YOUR_USERNAME)
+[![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=light)](https://leetcode.com/YOUR_USERNAME)
+[![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&theme=transparent)](https://leetcode.com/YOUR_USERNAME)
+\`\`\`
+
+---
+
+## ⚙️ Parameters
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `username` | string | required | Your LeetCode username |
+| `theme` | string | `dark` | Card theme: `dark`, `light`, `transparent` |
+| `hide` | string | — | Hide specific stats, comma separated |
+| `bg` | hex | — | Custom background color (without `#`) |
+| `accent` | hex | — | Custom accent/value color (without `#`) |
+
+---
+
+## 📊 Stats Grid
+
+You can choose which stats to display in the 2×2 grid using the `hide` parameter.
+
+Available stats:
+
+| Key | Description |
+|---|---|
+| `platformrank` | Your global LeetCode platform rank |
+| `contestrating` | Your contest rating |
+| `globalrank` | Your global contest rank |
+| `reputation` | Your reputation points |
+| `streak` | Your current streak |
+| `totalsolved` | Total problems solved |
+
+**Example — show only Platform Rank and Total Solved:**
+\`\`\`md
+![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&hide=contestrating,globalrank,reputation,streak)
+\`\`\`
+
+---
+
+## 🎨 Custom Colors
+
+You can fully customize the card colors using hex values (without `#`):
+
+\`\`\`md
+![LeetCode Stats](https://leetcode-stats-card-opal.vercel.app/api/card?username=YOUR_USERNAME&bg=1a1a2e&accent=e94560)
+\`\`\`
+
+---
+
+## 🌐 Live Demo
+
+Try the interactive card generator at:
+**[leetcode-stats-card-opal.vercel.app](https://leetcode-stats-card-opal.vercel.app)**
+
+![demo page](./public/preview-demo.png)
+
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js](https://nextjs.org/) — framework
+- [Vercel](https://vercel.com/) — hosting & edge functions
+- LeetCode GraphQL API — data source
+- Pure SVG — zero dependencies for card generation
+
+---
+
+## 🏃 Running Locally
 
 ```bash
+git clone https://github.com/sheeeuWu/leetcode-stats-card.git
+cd leetcode-stats-card
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the demo page.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The API will be available at:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+http://localhost:3000/api/card?username=YOUR_USERNAME
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MIT © [saifaliCodes](https://github.com/sheeeuWu)
+\`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
