@@ -6,8 +6,6 @@
   <br/>
 </div>
 
-&nbsp;
-
 Generate a beautiful, customizable LeetCode stats card for your GitHub README or portfolio — just like GitHub Readme Stats, but for LeetCode!
 
 <a href="https://leetcode-stats-card-opal.vercel.app">
